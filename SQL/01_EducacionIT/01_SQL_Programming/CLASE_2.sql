@@ -46,7 +46,13 @@ SELECT TOP 10 BusinessEntityID
 	FROM [HumanResources].[Employee]
 		--WHERE BirthDate > '2000-01-01'
 
-SELECT TOP 5 BirthDate
+SELECT TOP 5 BirthDate -- Ordena en base a la cantidad de arriba solicitada, en este caso es cinco.
 	FROM [HumanResources].[Employee]
 		ORDER BY BirthDate DESC
 
+SELECT DISTINCT JobTitle -- Esta funcion te muestra los repetidos dentro de una tabla.
+	FROM HumanResources.Employee
+
+SELECT DISTINCT JobTitle, MaritalStatus
+	FROM HumanResources.Employee
+		WHERE MaritalStatus <> 'M'
