@@ -56,3 +56,17 @@ SELECT DISTINCT JobTitle -- Esta funcion te muestra los repetidos dentro de una 
 SELECT DISTINCT JobTitle, MaritalStatus
 	FROM HumanResources.Employee
 		WHERE MaritalStatus <> 'M'
+
+/** EJERCICIO 5 | Manipulaciòn de text **/
+
+-- Funciones que vamos a ver: LEN, LEFT, RIGHT, SUBSTRING, REPLACE
+-- Los numeros entre comillas o no, para SQL son siempre INT, si lo planteas como string, convierte el tipo al correr a INT
+-- El simbolo mas(+) es el concatenador de SQL.
+
+LEN (nombre) -- posiciones que ocupa en el campo(devuelve un INT).
+LEFT (nombre, 3) -- trae los primeros tres caracteres.
+RIGHT (nombre, 3) -- trae los ultimos tres caracteres.
+SUBSTRING (nombre, 1, 3) --posicion inicial, cuantos caracteres debe correrse.
+
+SELECT JobTitle, LEFT() -- 1 Funcion SIEMPRE DEVUELVE UN SOLO VALOR. 
+	FROM HumanResources.Employee
