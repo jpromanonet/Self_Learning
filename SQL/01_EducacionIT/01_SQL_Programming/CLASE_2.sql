@@ -68,5 +68,11 @@ LEFT (nombre, 3) -- trae los primeros tres caracteres.
 RIGHT (nombre, 3) -- trae los ultimos tres caracteres.
 SUBSTRING (nombre, 1, 3) --posicion inicial, cuantos caracteres debe correrse.
 
-SELECT JobTitle, LEFT() -- 1 Funcion SIEMPRE DEVUELVE UN SOLO VALOR. 
+SELECT JobTitle, LEFT(JobTitle, 3) AS Izquierda -- 1 Funcion SIEMPRE DEVUELVE UN SOLO VALOR. 
+	FROM HumanResources.Employee
+
+SELECT JobTitle, LEFT(JobTitle, 3) AS 'Funcion Izquierda'  
+	FROM HumanResources.Employee
+
+SELECT JobTitle, 'Funcion Derecha' = RIGHT(JobTitle, 3)  
 	FROM HumanResources.Employee
