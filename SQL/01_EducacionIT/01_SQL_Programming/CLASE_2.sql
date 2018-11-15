@@ -38,4 +38,15 @@ ALTER TABLE Personas2 ADD Sexo CHAR(1)
 
 UPDATE Personas2 
 	SET Sexo = 'M'
-	WHERE Nombre = 'Jose' 
+	WHERE Nombre = 'Jose'
+	
+/** EJERCICIO 4 | Funciones **/
+
+SELECT TOP 10 BusinessEntityID
+	FROM [HumanResources].[Employee]
+		--WHERE BirthDate > '2000-01-01'
+
+SELECT TOP 5 BirthDate
+	FROM [HumanResources].[Employee]
+		ORDER BY BirthDate DESC
+
