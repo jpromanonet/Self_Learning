@@ -70,6 +70,7 @@ SUBSTRING (nombre, 1, 3) --posicion inicial, cuantos caracteres debe correrse.
 
 SELECT JobTitle, LEFT(JobTitle, 3) AS Izquierda -- 1 Funcion SIEMPRE DEVUELVE UN SOLO VALOR. 
 	FROM HumanResources.Employee
+		WHERE LEFT(JobTitle, 3) = 'Chi'
 
 SELECT JobTitle, LEFT(JobTitle, 3) AS 'Funcion Izquierda'  
 	FROM HumanResources.Employee
@@ -79,3 +80,17 @@ SELECT JobTitle, 'X' + JobTitle + '		' + 'X', 'Funcion Derecha' = RIGHT(JobTitle
 
 SELECT RTRIM(LTRIM(JobTitle)), 'Funcion Derecha' = RIGHT(JobTitle, 3)  
 	FROM HumanResources.Employee
+
+-- El motor de SQL ejecuta de abajo hacia arriba las consultas, el SELECT, es lo ultimo que se ejecuta.
+
+SELECT RTRIM(LTRIM(JobTitle)), 
+	'Funcion Derecha' = RIGHT(JobTitle, 3), 
+	SUBSTRING(JobTitle, 2, 6) AS 'Substring'
+		FROM HumanResources.Employee
+			WHERE LEN(JobTitle) >= 20
+
+SELECT JobTitle, 
+	LEFT(JobTitle, 3) AS 'Funcion Izquierda',
+	REPLACE(JobTitle, 'Database Administrator', 'Iron Man') -- Nombre de la columna, valor del campo, valor futuro.
+		FROM HumanResources.Employee
+		WHERE JobTitle LIKE '%Database%'
