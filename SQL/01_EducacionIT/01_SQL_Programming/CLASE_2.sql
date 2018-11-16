@@ -74,5 +74,8 @@ SELECT JobTitle, LEFT(JobTitle, 3) AS Izquierda -- 1 Funcion SIEMPRE DEVUELVE UN
 SELECT JobTitle, LEFT(JobTitle, 3) AS 'Funcion Izquierda'  
 	FROM HumanResources.Employee
 
-SELECT JobTitle, 'Funcion Derecha' = RIGHT(JobTitle, 3)  
+SELECT JobTitle, 'X' + JobTitle + '		' + 'X', 'Funcion Derecha' = RIGHT(JobTitle, 3)  -- Concatenacion
+	FROM HumanResources.Employee
+
+SELECT RTRIM(LTRIM(JobTitle)), 'Funcion Derecha' = RIGHT(JobTitle, 3)  
 	FROM HumanResources.Employee
