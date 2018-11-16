@@ -29,7 +29,7 @@ CREATE TABLE  -- TRANSACT SQL
 		Fecha_Nacimiento DATE NOT NULL)
 
 INSERT INTO Personas2(Nombre, Apellido, Fecha_Nacimiento)
-	VALUES ('Jose','Gomez','1950-06-05')
+	VALUES ('Juan','Van Ryle','1994-01-17')
 
 SELECT *
 	FROM Personas2
@@ -57,7 +57,7 @@ SELECT DISTINCT JobTitle, MaritalStatus
 	FROM HumanResources.Employee
 		WHERE MaritalStatus <> 'M'
 
-/** EJERCICIO 5 | Manipulaciòn de text **/
+/** EJERCICIO 5 | Manipulaciòn de texto **/
 
 -- Funciones que vamos a ver: LEN, LEFT, RIGHT, SUBSTRING, REPLACE
 -- Los numeros entre comillas o no, para SQL son siempre INT, si lo planteas como string, convierte el tipo al correr a INT
@@ -91,6 +91,28 @@ SELECT RTRIM(LTRIM(JobTitle)),
 
 SELECT JobTitle, 
 	LEFT(JobTitle, 3) AS 'Funcion Izquierda',
-	REPLACE(JobTitle, 'Database Administrator', 'Iron Man') -- Nombre de la columna, valor del campo, valor futuro.
+	REPLACE(JobTitle, 'Database Administrator', 'Iron Man') AS 'Avenger' -- Nombre de la columna, valor del campo, valor futuro.
 		FROM HumanResources.Employee
 		WHERE JobTitle LIKE '%Database%'
+
+SELECT RTRIM(LTRIM(JobTitle)) AS Puesto, 
+	CHARINDEX ('admin', JobTitle, 1) AS Contador
+		FROM HumanResources.Employee
+			WHERE LEN(JobTitle) >= 20
+				ORDER BY Contador DESC
+
+/** EJERCICIO 6 | Funciones de fecha **/
+
+SELECT GETDATE() -- Trae la hora del servidor en donde esta la DB, si es localhost, trae la hora de la PC local, sino el servidor donde corra.
+
+-- Calcular edad de una persona.
+
+SELECT *,
+	DATEDIFF(YYYY, Fecha_Nacimiento, GETDATE()) AS Edad
+	FROM Personas
+
+
+
+
+
+
