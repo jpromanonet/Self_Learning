@@ -108,11 +108,19 @@ SELECT GETDATE() -- Trae la hora del servidor en donde esta la DB, si es localho
 -- Calcular edad de una persona.
 
 SELECT *,
-	DATEDIFF(YYYY, Fecha_Nacimiento, GETDATE()) AS Edad
+	DATEDIFF(YYYY, Fecha_Nacimiento, GETDATE()) AS Edad,
+	DATEPART(MM, GETDATE()) AS Mes
 	FROM Personas
 
+SELECT *,
+	DATEPART(MM, GETDATE()) AS Mes
+	FROM Personas
 
+/** EJERCICIO 7 | Funciones de conversion **/
 
+-- CAST Siempre te devuelve texto 
+-- (CAST CONVERT) https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-2017
+-- CONVERT te permite dar un formato parciular.
 
-
-
+SELECT GETDATE() AS FECHA_NUMERO,
+	 CAST(GETDATE() AS VARCHAR(25)) AS FECHA_TEXTO -- Que convierta el getdate en texto de 25 caracteres de largo.
