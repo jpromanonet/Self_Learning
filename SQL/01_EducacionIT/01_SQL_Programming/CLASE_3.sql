@@ -72,3 +72,18 @@ FROM HumanResources.Employee
 UNION
 SELECT * 
 	FROM vw_VacacionesTotales 
+
+-- En UNION, NUNCA poner *, poner siempre los campos especificamente y mismo creando vistas.
+
+/** Ejercicio 6 | JOIN **/
+
+-- INNER JOIN (Intersecciòn entre las dos tablas)
+
+SELECT *
+	FROM Sales.vIndividualCustomer S
+		INNER JOIN Sales.vSalesPerson SP1
+			ON s.FirstName = SP1.FirstName
+		INNER JOIN Sales.vSalesPerson SP2
+			ON s.MiddleName = SP2.MiddleName
+		INNER JOIN Sales.vSalesPerson SP3
+			ON s.LastName = SP3.LastName
