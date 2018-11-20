@@ -56,3 +56,17 @@ SELECT DATE, SUM(HorasVacacionestotales) FROM vw_VacacionesTotales
 	ORDER BY DATE
 
 DROP VIEW vw_VacacionesTotales
+
+/** Ejercicio 5 | UNION **/
+
+-- UNION permite unificar dos estructuras en una misma consulta.
+
+SELECT * 
+	FROM vw_VacacionesTotales 
+
+UNION
+
+SELECT CONVERT(DATE, BirthDate, 112) AS DATE, JobTitle,
+	    SUM(VacationHours) AS HorasVacacionesTotales
+			FROM HumanResources.Employee
+				GROUP BY CONVERT(date, BirthDate, 112), JobTitle
