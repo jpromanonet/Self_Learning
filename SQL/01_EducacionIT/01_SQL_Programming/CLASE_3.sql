@@ -61,12 +61,14 @@ DROP VIEW vw_VacacionesTotales
 
 -- UNION permite unificar dos estructuras en una misma consulta.
 
+SELECT CONVERT(DATE, BirthDate, 112) AS DATE, Jobtitle, -- Este ejemplo SI funciona! (usa este)
+			SUM(VacationHours) AS HorasVacacionestotales,
+			AVG(VacationHours) AS HorarasVacacionesPromedio_AVG,
+			MIN(VacationHours) AS HorarasVacacionesPromedio_MIN,
+			MAX(VacationHours) AS HorarasVacacionesPromedio_MAX
+FROM HumanResources.Employee
+	GROUP BY CONVERT(date, BirthDate, 112), JobTitle
+		HAVING SUM(VacationHours) > 20
+UNION
 SELECT * 
 	FROM vw_VacacionesTotales 
-
-UNION
-
-SELECT CONVERT(DATE, BirthDate, 112) AS DATE, JobTitle,
-	    SUM(VacationHours) AS HorasVacacionesTotales
-			FROM HumanResources.Employee
-				GROUP BY CONVERT(date, BirthDate, 112), JobTitle
