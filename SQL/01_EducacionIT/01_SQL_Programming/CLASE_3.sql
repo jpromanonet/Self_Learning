@@ -52,3 +52,7 @@ SELECT CONVERT(DATE, BirthDate, 112) AS DATE, Jobtitle, -- Este ejemplo SI funci
 SELECT *
 	FROM vw_VacacionesTotales
 
+SELECT DATE, SUM(HorasVacacionestotales) FROM vw_VacacionesTotales
+	ORDER BY DATE
+
+DROP VIEW vw_VacacionesTotales
