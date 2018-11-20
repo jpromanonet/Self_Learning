@@ -34,3 +34,21 @@ SELECT CONVERT(DATE, BirthDate, 112) AS DATE, Jobtitle, -- Este ejemplo SI funci
 					GROUP BY CONVERT(date, BirthDate, 112), JobTitle
 					HAVING SUM(VacationHours) > 20
 					ORDER BY HorasVacacionesTotales
+
+/** Ejercicio 4 | Creacion de Vistas **/
+
+CREATE VIEW vw_VacacionesTotales -- NO tomes ne cuenta el subrayado en rojo, tampoco agregues ORDER BY
+	AS
+
+SELECT CONVERT(DATE, BirthDate, 112) AS DATE, Jobtitle, -- Este ejemplo SI funciona! (usa este)
+			SUM(VacationHours) AS HorasVacacionestotales,
+			AVG(VacationHours) AS HorarasVacacionesPromedio_AVG,
+			MIN(VacationHours) AS HorarasVacacionesPromedio_MIN,
+			MAX(VacationHours) AS HorarasVacacionesPromedio_MAX
+				FROM HumanResources.Employee
+					GROUP BY CONVERT(date, BirthDate, 112), JobTitle
+					HAVING SUM(VacationHours) > 20
+
+SELECT *
+	FROM vw_VacacionesTotales
+
