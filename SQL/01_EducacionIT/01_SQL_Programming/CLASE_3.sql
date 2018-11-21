@@ -77,7 +77,7 @@ SELECT *
 
 /** Ejercicio 6 | JOIN **/
 
--- INNER JOIN (Intersecciòn entre las dos tablas)
+-- INNER JOIN (Intersecciòn entre las dos tablas, su orden no importa.)
 
 SELECT *
 	FROM Sales.vIndividualCustomer S
@@ -87,3 +87,20 @@ SELECT *
 			ON s.MiddleName = SP2.MiddleName
 		INNER JOIN Sales.vSalesPerson SP3
 			ON s.LastName = SP3.LastName
+
+-- LEFT JOIN (Se queda con TODA la tabla de la izquierda, el orden de las tablas SI IMPORTA.)
+
+SELECT *
+	FROM Sales.vIndividualCustomer S
+		LEFT JOIN Sales.vSalesPerson SP1
+			ON s.FirstName = SP1.FirstName
+
+-- RIGHT JOIN (Se queda con TODA la tabla de la izquierda, el orden de las tablas SI IMPORTA.)
+
+SELECT *
+	FROM Sales.vIndividualCustomer S
+		RIGHT JOIN Sales.vSalesPerson SP1
+			ON s.FirstName = SP1.FirstName
+
+ 
+
