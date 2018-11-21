@@ -95,12 +95,20 @@ SELECT *
 		LEFT JOIN Sales.vSalesPerson SP1
 			ON s.FirstName = SP1.FirstName
 
+SELECT *
+	FROM Sales.vIndividualCustomer S
+		LEFT JOIN Sales.vSalesPerson SP1
+			ON s.FirstName = SP1.FirstName
+				WHERE s.AddressLine1 IS NOT NULL
+
 -- RIGHT JOIN (Se queda con TODA la tabla de la izquierda, el orden de las tablas SI IMPORTA.)
 
 SELECT *
 	FROM Sales.vIndividualCustomer S
 		RIGHT JOIN Sales.vSalesPerson SP1
 			ON s.FirstName = SP1.FirstName
+
+-- OUTER JOIN 
 
  
 
