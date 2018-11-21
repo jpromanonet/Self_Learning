@@ -1,0 +1,85 @@
+
+<!--
+Author: Juan P. Romano
+Author URL: http://jpromano.net
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Special Coming Soon Page</title>
+<!-- for-mobile-apps -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link href='//fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href="css/jquery.classycountdown.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+	<div class="content">
+		<h1><font face='arial'>Special Coming Soon Page</font></h1>
+			<div class="main">
+				<div id="countdown9" class="ClassyCountdownDemo"></div>
+			</div>
+				<script src="js/jquery.min.js"></script>
+				<script src="js/jquery.knob.js"></script>
+				<script src="js/jquery.throttle.js"></script>
+				<script src="js/jquery.classycountdown.js"></script>
+									<script>
+                                        $(document).ready(function() {
+                                            $('#countdown9').ClassyCountdown({
+                                                end: '1388468325',
+                                                now: '1380501323',
+                                                labels: true,
+                                                style: {
+                                                    element: "",
+                                                    textResponsive: .5,
+                                                    days: {
+                                                        gauge: {
+                                                            thickness: .10,
+                                                            bgColor: "rgba(0,0,0,0)",
+                                                            fgColor: "#1abc9c",
+                                                            lineCap: 'round'
+                                                        },
+                                                        textCSS: 'font-weight:300; color:#fff;'
+                                                    },
+                                                    hours: {
+                                                        gauge: {
+                                                            thickness: .10,
+                                                            bgColor: "rgba(0,0,0,0)",
+                                                            fgColor: "#05BEF6",
+                                                            lineCap: 'round'
+                                                        },
+                                                        textCSS: ' font-weight:300; color:#fff;'
+                                                    },
+                                                    minutes: {
+                                                        gauge: {
+                                                            thickness: .10,
+                                                            bgColor: "rgba(0,0,0,0)",
+                                                            fgColor: "#8e44ad",
+                                                            lineCap: 'round'
+                                                        },
+                                                        textCSS: ' font-weight:300; color:#fff;'
+                                                    },
+                                                    seconds: {
+                                                        gauge: {
+                                                            thickness: .10,
+                                                            bgColor: "rgba(0,0,0,0)",
+                                                            fgColor: "#f39c12",
+                                                            lineCap: 'round'
+                                                        },
+                                                        textCSS: ' font-weight:300; color:#fff;'
+                                                    }
+
+                                                },
+                                                onEndCallback: function() {
+                                                    console.log("Time out!");
+                                                }
+                                            });
+                                        });
+                                    </script>
+</body>
+</html>
