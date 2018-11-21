@@ -115,5 +115,21 @@ SELECT *
 
 -- OUTER JOIN 
 
- 
+/** Ejercicio  7 | Tablas Temporales **/
 
+-- Podria tener PK pero no se utiliza, no se pueden crear estàs tablas a partir de una vista.
+-- Se identifican con los simbolos: #(Sesiòn/Instancia actual) y ##(Para todas las sesiones / instancias)
+
+SELECT *			--------> Tabla temporal que NO persiste entre sesiones y solo funciona en la sesiòn actual 
+	INTO #tmp
+		FROM Production.Product
+
+SELECT * 
+	FROM #tmp
+
+SELECT *			--------> Tabla temporal que persiste entre sesiones.
+	INTO ##tmp2
+		FROM Production.Product
+
+SELECT * 
+	FROM ##tmp2
