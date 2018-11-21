@@ -133,3 +133,14 @@ SELECT *			--------> Tabla temporal que persiste entre sesiones.
 
 SELECT * 
 	FROM ##tmp2
+
+--Con INDICES
+
+CREATE INDEX Idx_tmp3_Products ON ##tmp2(ProductID)
+
+SELECT *
+	FROM ##tmp2
+
+DROP TABLE ##tmp2
+
+--/**EOF**/--
