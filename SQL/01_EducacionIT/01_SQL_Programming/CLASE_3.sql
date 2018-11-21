@@ -141,6 +141,6 @@ CREATE INDEX Idx_tmp3_Products ON ##tmp2(ProductID)
 SELECT *
 	FROM ##tmp2
 
-DROP TABLE ##tmp2
+DROP TABLE ##tmp2 -- Siempre dropear la tabla aunque sea temporal.
 
 --/**EOF**/--
