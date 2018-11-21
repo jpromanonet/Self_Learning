@@ -88,6 +88,11 @@ SELECT *
 		INNER JOIN Sales.vSalesPerson SP3
 			ON s.LastName = SP3.LastName
 
+SELECT *
+	FROM Sales.SalesOrderDetail So
+		INNER JOIN Production.Product P
+			ON So.ProductID = p.ProductID
+
 -- LEFT JOIN (Se queda con TODA la tabla de la izquierda, el orden de las tablas SI IMPORTA.)
 
 SELECT *
