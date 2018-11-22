@@ -23,6 +23,8 @@ SELECT color,
 			FROM Production.Product PP
 				WHERE color IS NOT NULL
 
+--
+
 SELECT color,
 	'Gama_de_Colores' =
 		CASE
@@ -47,6 +49,8 @@ SELECT color,
 			FROM Production.Product PP
 				WHERE color IS NOT NULL
 					GROUP BY Color
+
+--
 
 INSERT color,
 	'Gama_de_Colores' =
@@ -98,5 +102,8 @@ SELECT *
 	FROM Production.Product PP 
 		WITH (INDEX = IDX_PRODUCT_PRODUCT_NUMBER_2)
 			WHERE ProductNumber = @PD_NUM
+
+--NOTA: La diferencia entre un indice comun y un indice cluster es que el indice guarda el sector entero del HDD y 
+--el indice cluster guarda la posiciòn exacta en el HDD.
 
 --
