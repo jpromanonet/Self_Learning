@@ -107,3 +107,8 @@ SELECT *
 --el indice cluster guarda la posiciòn exacta en el HDD.
 
 --
+
+DROP INDEX IDX_PRODUCT_PRODUCT_NUMBER_2
+	ON Production.Product
+
+--
