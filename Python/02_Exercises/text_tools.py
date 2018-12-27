@@ -20,12 +20,24 @@ def upperText(text): # Converting text to upper characters
 
 while keep_Working == 'Y': # Menu Loop
 
-    print('What do you want to do?')
-    option = input()
+  print('1_______ Count text characters')
+  print('')
+  print('2_______ Convert to upper case')
+  print('')
 
-    
+  print('What do you want to do?')
+  option = input()
+
+  if option == '1':
 
     print('Write something, please')
     input_Text = input() # Introducing some text
 
     textLen(input_Text) # Counting the text lenght
+    
+  elif option == '2':
+
+    print('Write something, please')
+    input_Text = input() # Introducing some text
+
+    upperText(input_Text) # Converting the text case
